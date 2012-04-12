@@ -1,5 +1,10 @@
 import libs.*;
 import libs.functions.*;
+import libs.functions.acceptance.AcceptanceFunction;
+import libs.functions.acceptance.Barkley;
+import libs.functions.acceptance.Metropolis;
+import libs.functions.cooling.Bohachevsky;
+import libs.functions.cooling.CollingSchedule;
 import methods.*;
 import methods.grid.*;
 import methods.walk.*;
@@ -48,13 +53,24 @@ public class Main {
 //		
 //		res = RandomWalk.run(i);
 		
-		Function f = new Rosenbrock();
-		double min[] = {-3.62, -4.23};
-		double max[] = {6.37, 5.77};
-		Range range = new Range(min, max);
-		Input i = new RWEInput(f, range, Math.pow(10, 5), 40);
+//		Function f = new Rosenbrock();
+//		double min[] = {-3.62, -4.23};
+//		double max[] = {6.37, 5.77};
+//		Range range = new Range(min, max);
+//		Input i = new RWEInput(f, range, Math.pow(10, 5), 40);
+//		
+//		res = RandomWalkExploit.run(i);
 		
-		res = RandomWalkExploit.run(i);
+		Function f = new Rastrigin(10, 2);
+		double min[] = {-5.12, -5.12};
+		double max[] = {5.12, 5.12};
+		Range range = new Range(min, max);
+//		AcceptanceFunction af = new Metropolis();
+		AcceptanceFunction af = new Barkley();
+		CollingSchedule cs = new Bohachevsky(f, 0, 0.8, 1);
+		Input i = new SAInput(f, range, Math.pow(10, 6), af, cs);
+		
+		res = SimAnnealing.run(i);
 		
 		System.out.println(res);
 	}
