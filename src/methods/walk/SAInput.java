@@ -3,11 +3,10 @@
  */
 package methods.walk;
 
-import libs.Input;
-import libs.Range;
+import libs.*;
 import libs.functions.Function;
 import libs.functions.acceptance.AcceptanceFunction;
-import libs.functions.cooling.CollingSchedule;
+import libs.functions.cooling.CoolingSchedule;
 
 /**
  * @author iskoulis
@@ -16,11 +15,17 @@ import libs.functions.cooling.CollingSchedule;
 public class SAInput extends Input {
 	
 	AcceptanceFunction af;
-	CollingSchedule cs;
+	CoolingSchedule cs;
+	double step;
+	double fStar;
+	double prec;
 	
-	public SAInput(Function func, Range range, double steps,AcceptanceFunction af, CollingSchedule cs) {
+	public SAInput(Function func, Range range, double steps,AcceptanceFunction af, CoolingSchedule cs, double step, double fStar, double prec) {
 		super(func, range, steps);
 		this.af = af;
 		this.cs = cs;
+		this.step = step;
+		this.fStar = fStar;
+		this.prec = prec;
 	}
 }

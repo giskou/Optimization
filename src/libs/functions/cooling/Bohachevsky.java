@@ -12,7 +12,7 @@ import libs.functions.Function;
  * @author iskoulis
  *
  */
-public class Bohachevsky implements CollingSchedule {
+public class Bohachevsky implements CoolingSchedule {
 
 	double B, a, fStar;
 	Function f;

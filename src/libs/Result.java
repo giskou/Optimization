@@ -21,6 +21,7 @@ public class Result {
 	@Override
 	public String toString() {
 		return this.value + " at " + this.res + " after " + this.steps;
+//		return this.value + " " + this.steps;
 	}
 	
 	public Point getRes(){

@@ -10,7 +10,7 @@ import libs.functions.Function;
  * @author iskoulis
  *
  */
-public class Barkley implements AcceptanceFunction {
+public class Barker implements AcceptanceFunction {
 
 	@Override
 	public double A(Function f, Point x, Point y, double t) {

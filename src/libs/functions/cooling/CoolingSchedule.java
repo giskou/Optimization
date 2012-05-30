@@ -11,6 +11,6 @@ import libs.Point;
  * @author iskoulis
  *
  */
-public interface CollingSchedule {
+public interface CoolingSchedule {
 	public double U(LinkedList<Point> z);
 }
