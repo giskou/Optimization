@@ -1,10 +1,7 @@
-import libs.*;
-import libs.functions.*;
-import libs.functions.acceptance.*;
-import libs.functions.cooling.*;
-import methods.*;
-import methods.grid.*;
-import methods.walk.*;
+import libs.Point;
+import methods.evolution.Population;
+import methods.evolution.selection.LinearRanking;
+import methods.evolution.selection.Selection;
 
 
 public class Main {
@@ -15,9 +12,9 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-		Function f;
-		Input i;
-		Result res;
+//		Function f;
+//		Input i;
+//		Result res;
 		
 //		f = new Parabola(1);
 //		double min[] = {-4.0};
@@ -123,5 +120,28 @@ public class Main {
 //			res = TabuSearch.run(i);
 //			System.out.println(res);
 //		}
+		
+//---------------------------------------------------
+//---------------------------------------------------
+
+		Population test = new Population();
+		double p[] = {0,0};
+		
+		test.add(new Point(p), 5.4);
+		test.add(new Point(p), 4.5);
+		test.add(new Point(p), 3.2);
+		test.add(new Point(p), 2.3);
+		test.add(new Point(p), 1.1);
+
+		Population test2 = new Population(test);
+		test.clear();
+
+		Selection sel = new LinearRanking(2);
+		sel.fitness(test2);
+		
+		System.out.println(test);
+		System.out.println(test2);
+		
+		System.out.println(test2);
 	}
 }
