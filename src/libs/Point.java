@@ -69,7 +69,7 @@ public class Point {
 	public String toString() {
 		String s = "[";
 		for (int i = 0; i < this.dim; i++){
-			s += p[i];
+			s += (float)p[i];
 			if (i == this.dim - 1) {
 				s += "]";
 			} else {

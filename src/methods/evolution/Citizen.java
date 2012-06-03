@@ -12,7 +12,7 @@ import libs.Point;
  *
  */
 public class Citizen {
-	Point x;
+	Point p;
 	double value;
 	int rank;
 	float fitness;
@@ -21,15 +21,26 @@ public class Citizen {
 		public int compare(Citizen c1,Citizen c2) {
 			if(c1.value > c2.value)
 				return +1;
-			else if(c1.value < c2.value)
+			else 
 				return -1;
-			else
-				return 0;
+//			if(c1.value < c2.value)
+//				return -1;
+//			else
+//				return 0;
 		}
+		
+//		public boolean equals(Citizen c1) {
+//			if(value == c1.value) {
+//				return true;
+//			}
+//			else {
+//				return false;
+//			}
+//		}
 	}
 	
 	public Citizen(Point p, double value) {
-		this.x = p;
+		this.p = p;
 		this.value = value;
 	}
 	
@@ -52,8 +63,16 @@ public class Citizen {
 	public void setFitness(float f) {
 		this.fitness = f;
 	}
+	
+	public float fitness() {
+		return this.fitness;
+	}
+	
+	public Point point() {
+		return p;
+	}
 
 	public String toString() {
-		return fitness + " " + value;
+		return "f:" + fitness + " v:" + (float)value + " p:" + p;
 	}
 }

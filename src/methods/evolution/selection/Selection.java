@@ -16,21 +16,27 @@ import methods.evolution.Population;
 public abstract class Selection {
 	
 	protected Population pop;
+	protected Selector s;
+	
+	public Selection(Selector sel) {
+		this.s = sel;
+	}
 
-	public void fitness(Population pop) {
+	public Population select(Population pop) {
 		this.pop = pop;
 		TreeSet<Citizen> items = pop.getItems();
 		Iterator<Citizen> it = items.descendingIterator();
 		int rank = 1;
+		update();
 		while(it.hasNext()) {
 			Citizen c = it.next();
-			System.out.println(c);
 			c.setRank(rank);
 			evaluate(c);
-			System.out.println(c);
 			rank++;
 		}
+		return this.s.Spin(pop);
 	}
 	
 	protected abstract void evaluate(Citizen ct);
+	protected abstract void update();
 }

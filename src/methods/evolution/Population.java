@@ -34,17 +34,25 @@ public class Population {
 		}
 	}
 	
+	public Citizen best() {
+		return items.first();
+	}
+	
 	public void add(Point p, double value) {
 		this.items.add(new Citizen(p, value));
+	}
+	
+	public void add(Citizen c) {
+		this.items.add(c);
 	}
 	
 	public Point remove(Point p) {
 		Iterator<Citizen> itr = this.items.iterator();
 		while(itr.hasNext()){
 			Citizen ptr = itr.next();
-			if (ptr.x == p) {
+			if (ptr.p == p) {
 				this.items.remove(ptr);
-				return ptr.x;
+				return ptr.p;
 			}
 		}
 		return null;

@@ -14,6 +14,8 @@ public class HistoryList extends LinkedList<Double> {
 	
 	private static final long serialVersionUID = -4964516675117737045L;
 	int size;
+	boolean changed;
+	double worst;
 	
 	public HistoryList (int size) {
 		this.size = size;
@@ -26,17 +28,24 @@ public class HistoryList extends LinkedList<Double> {
 		} else {
 			super.push(value);
 		}
+		changed = true;
 	}
 	
 	public double getWorst() {
-		Iterator<Double> it = this.iterator();
-		double worst = this.getFirst();
-		while(it.hasNext()) {
-			double cur = it.next();
-			if (cur > worst) {
-				worst = cur;
+		if (changed) {
+			Iterator<Double> it = this.iterator();
+			double worst = this.getFirst();
+			while(it.hasNext()) {
+				double cur = it.next();
+				if (cur > worst) {
+					worst = cur;
+				}
 			}
+			this.worst = worst;
+			changed = false;
+			return this.worst;
+		} else {
+			return this.worst;
 		}
-		return worst;
 	}
 }
