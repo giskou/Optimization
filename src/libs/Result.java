@@ -31,4 +31,8 @@ public class Result {
 	public long getSteps() {
 		return this.steps;
 	}
+	
+	public double getValue(){
+		return this.value;
+	}
 }

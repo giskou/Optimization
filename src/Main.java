@@ -170,19 +170,19 @@ public class Main {
 //		Input in = new EvInput(f, range, Math.pow(10, 6), Math.pow(10, -2), ps_tm, rv, m, 10);
 		
 		
-		for (int i = 0; i < 30; i++) {
+//		for (int i = 0; i < 30; i++) {
 //			Selection sel = new PowerScaling(new RouletteWheel(), (float)-2);
-			Selection sel = new PowerScaling(new Tournament(10), (float)-2);
+//			Selection sel = new PowerScaling(new Tournament(10), (float)-2);
 //			Recombination rc = new Discrete();
-			Recombination rc = new RealValued(range, (float)0.25);
-			Mutation m = new RealGaussian(range, (float)0.33, (float)(1-Math.pow(10,-4)));
-			Input in = new EvInput(f, range, Math.pow(10, 6), Math.pow(10, -2), sel, rc, m, 20);
-			Result res = GenericEvolution.run(in);
-			System.out.println(res);
+//			Recombination rc = new RealValued(range, (float)0.25);
+//			Mutation m = new RealGaussian(range, (float)0.33, (float)(1-Math.pow(10,-4)));
+//			Input in = new EvInput(f, range, Math.pow(10, 6), Math.pow(10, -2), sel, rc, m, 20);
+//			Result res = GenericEvolution.run(in);
+//			System.out.println(res);
 //			res = GenericEvolution.run(in);
 //			System.out.println(i + "  " + res);
 //			res = GenericEvolution.run(in);
 //			System.out.println(i + "  " + res);
-		}
+//		}
 	}
 }
