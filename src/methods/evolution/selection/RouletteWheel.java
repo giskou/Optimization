@@ -15,6 +15,10 @@ import methods.evolution.Population;
  */
 public class RouletteWheel implements Selector {
 
+	/**
+	 *@param: Population
+	 *@return selected citizen
+	 */
 	public Population Spin(Population p) {
 		Population result = new Population();
 		for (int i = 0; i < p.size(); i++) {

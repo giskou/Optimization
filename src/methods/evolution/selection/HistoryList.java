@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * @author giskou
+ * @author iskoulis ekontogi
  *
  */
 public class HistoryList extends LinkedList<Double> {
@@ -20,7 +20,9 @@ public class HistoryList extends LinkedList<Double> {
 	public HistoryList (int size) {
 		this.size = size;
 	}
-	
+	/**
+	 *@param: value to be pushed into the list
+	 */
 	public void push(Double value) {
 		if (super.size() == this.size) {
 			super.pollLast();
@@ -30,7 +32,9 @@ public class HistoryList extends LinkedList<Double> {
 		}
 		changed = true;
 	}
-	
+	/**
+	 *@return: worst value in the list
+	 */
 	public double getWorst() {
 		if (changed) {
 			Iterator<Double> it = this.iterator();

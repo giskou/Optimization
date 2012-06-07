@@ -14,13 +14,18 @@ import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
 
 public class mainGui {
 
-	private JFrame frame;
+	private JFrame frmEvolutionaryAlgorithms;
 	private JPanel contentPane;
 	private JPanel panel;
 	public static JTextArea textArea;
+	private static JTextField acc;
+	private static JTextField calc;
+	private JScrollPane scrollPane;
+	private JLabel lblOutput;
 	/**
 	 * Launch the application.
 	 */
@@ -29,7 +34,7 @@ public class mainGui {
 			public void run() {
 				try {
 					mainGui window = new mainGui();
-					window.frame.setVisible(true);
+					window.frmEvolutionaryAlgorithms.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,23 +64,25 @@ public class mainGui {
 		} catch (UnsupportedLookAndFeelException e1) {
 			e1.printStackTrace();
 		}
-		frame = new JFrame();
-		frame.setBounds(100, 100, 752, 819);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmEvolutionaryAlgorithms = new JFrame();
+		frmEvolutionaryAlgorithms.setResizable(false);
+		frmEvolutionaryAlgorithms.setTitle("Evolutionary Algorithms");
+		frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 819);
+		frmEvolutionaryAlgorithms.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] meth = {"Evolutionnary Algorithm", "PSO", "DE"};
+		String[] meth = {"Evolutionnary Algorithm", "PSO", "Differencial Evolution"};
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		frame.setContentPane(contentPane);
+		frmEvolutionaryAlgorithms.setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		
 		JSeparator separator_5 = new JSeparator();
-		separator_5.setBounds(29, 83, 695, 6);
+		separator_5.setBounds(29, 83, 662, 16);
 		contentPane.add(separator_5);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setBounds(29, 609, 662, 160);
 		contentPane.add(scrollPane);
 		
@@ -85,7 +92,7 @@ public class mainGui {
 		textArea.setEditable(false);
 
 		
-		JLabel lblOutput = new JLabel("Output");
+		lblOutput = new JLabel("Output");
 		lblOutput.setBounds(29, 582, 70, 15);
 		contentPane.add(lblOutput);
 		
@@ -103,12 +110,14 @@ public class mainGui {
 				System.out.println(selection);
 				if(selection.compareTo("Evolutionnary Algorithm") == 0){
 					if (panel != null) contentPane.remove(panel);
-					panel = new window();
+					panel = new eaGui();
 					panel.setBounds(12, 101, 695, 466);
 					contentPane.add(panel);
 					panel.repaint();
 					panel.setLayout(null);
-					
+					lblOutput.setBounds(29, 582, 70, 15);
+					scrollPane.setBounds(29, 609, 662, 160);
+					frmEvolutionaryAlgorithms.setBounds(100, 100, 752, 819);
 				}
 				else if(selection.compareTo("PSO") == 0){
 					contentPane.remove(panel);
@@ -117,8 +126,21 @@ public class mainGui {
 					contentPane.add(panel);
 					panel.repaint();
 					panel.setLayout(null);
+					lblOutput.setBounds(29, 330, 70, 15);
+					scrollPane.setBounds(29, 350, 662, 160);
+					frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 560);
 				}
-				else if(selection.compareTo("DE") == 0){
+				else if(selection.compareTo("Differencial Evolution") == 0){
+					contentPane.remove(panel);
+					panel = new deGui();
+					panel.setBounds(12, 101, 695, 466);
+					contentPane.add(panel);
+					panel.repaint();
+					panel.setLayout(null);
+					lblOutput.setBounds(29, 330, 70, 15);
+					scrollPane.setBounds(29, 350, 662, 160);
+					frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 560);
+					
 				}
 			}
 		});
@@ -127,5 +149,34 @@ public class mainGui {
 			methods.addItem(meth[i]);
 		}
 		contentPane.add(methods);
+		
+		JLabel lblAccuarcy = new JLabel("Accuarcy");
+		lblAccuarcy.setBounds(251, 33, 70, 15);
+		contentPane.add(lblAccuarcy);
+		
+		acc = new JTextField();
+		acc.setColumns(10);
+		acc.setBounds(353, 31, 50, 19);
+		contentPane.add(acc);
+		
+		JLabel lblCalculations = new JLabel("Calculations");
+		lblCalculations.setBounds(455, 33, 105, 15);
+		contentPane.add(lblCalculations);
+		
+		calc = new JTextField();
+		calc.setColumns(10);
+		calc.setBounds(578, 31, 107, 19);
+		contentPane.add(calc);
+	}
+	public static double get_Acc(){
+		double accuracy = Double.valueOf(acc.getText());
+		System.out.println(accuracy);
+		return accuracy;
+	}
+	
+	public static double get_Calc(){
+		double calcs = Double.valueOf(calc.getText());
+		System.out.println(calcs);
+		return calcs;
 	}
 }

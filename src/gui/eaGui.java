@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 
 import libs.Input;
 import libs.Range;
@@ -31,7 +33,7 @@ import methods.evolution.selection.Selection;
 import methods.evolution.selection.Tournament;
 
 @SuppressWarnings("serial")
-public class window extends JPanel {
+public class eaGui extends JPanel {
 
 	private JTextField textField;
 	private JTextField textField_1;
@@ -69,15 +71,14 @@ public class window extends JPanel {
 	/**
 	 * Create the frame.
 	 */
-	public window() {
+	public eaGui() {
 		setLayout(null);
 		panel = new JPanel();
-		
-		panel = new JPanel();
-		panel.setBounds(12, 12, 695, 466);
+		panel.setBorder(new TitledBorder(null, "PSO", TitledBorder.LEADING, TitledBorder.TOP, null, UIManager.getColor("InternalFrame.activeTitleForeground")));
+		panel.setBounds(12, 0, 670, 466);
 		add(panel);
 		panel.setLayout(null);
-		
+
 		JLabel lblSelectors = new JLabel("Selectors");
 		lblSelectors.setBounds(30, 12, 70, 15);
 		panel.add(lblSelectors);
@@ -116,7 +117,6 @@ public class window extends JPanel {
 			}
 		});
 		rdbtnLinearScaling.setBounds(30, 61, 149, 23);
-//		contentPane.add(rdbtnLinearScaling);
 		panel.add(rdbtnLinearScaling);
 		
 		JRadioButton rdbtnPowerScaling = new JRadioButton("Power Scaling");
@@ -138,7 +138,7 @@ public class window extends JPanel {
 		panel.add(rdbtnPowerScaling);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(29, 215, 646, 15);
+		separator_1.setBounds(29, 215, 626, 15);
 		panel.add(separator_1);
 		
 		JLabel lblRecombination = new JLabel("Recombination");
@@ -166,7 +166,7 @@ public class window extends JPanel {
 		panel.add(rdbtnRealvaluedRecombination);
 		
 		JSeparator separator_2 = new JSeparator();
-		separator_2.setBounds(28, 345, 647, 15);
+		separator_2.setBounds(28, 345, 627, 15);
 		panel.add(separator_2);
 		
 		JLabel lblMutation = new JLabel("Mutation");
@@ -361,7 +361,7 @@ public class window extends JPanel {
 		textField_11 = new JTextField();
 		textField_11.setEnabled(false);
 		textField_11.setColumns(10);
-		textField_11.setBounds(595, 63, 50, 19);
+		textField_11.setBounds(572, 63, 50, 19);
 		textField_11.setToolTipText("history size");
 		panel.add(textField_11);
 		
@@ -441,15 +441,15 @@ public class window extends JPanel {
 					}
 				}
 				Mutation m = new RealGaussian(range, prob, factor);
-				Input in = new EvInput(f, range, Math.pow(10, 6), Math.pow(10, -2), sel, rc, m, popsize);
+				Input in = new EvInput(f, range, mainGui.get_Calc(), mainGui.get_Acc(), sel, rc, m, popsize);
 				res = GenericEvolution.run(in);
-				String output = "Evolutionnary Algorithm result = " + res.getValue() + " at " + res.getRes() + " after " + res.getSteps() +"\n";
-				System.out.println(output);
+				String output = "EA result = " + res.getValue() + " at " + res.getRes() + " after " + res.getSteps() +"\n";
+//				System.out.println(output);
 				mainGui.textArea.append(output);
 				System.out.println(res);
 			}
 		});
-		btnStart.setBounds(590, 427, 89, 25);
+		btnStart.setBounds(556, 429, 89, 25);
 		panel.add(btnStart);
 
 		
@@ -458,13 +458,8 @@ public class window extends JPanel {
 		panel.add(lblSize);
 		
 		JLabel lblHistory = new JLabel("History");
-		lblHistory.setBounds(526, 65, 70, 15);
+		lblHistory.setBounds(515, 65, 70, 15);
 		panel.add(lblHistory);
-		
-		
-		
-		
-		
 	}
 	public void set_Selectors(String s){
 		

@@ -11,7 +11,12 @@ import methods.evolution.recombination.Recombination;
 import methods.evolution.selection.Selection;
 
 /**
- * @author giskou
+ * @author giskou ekontogi
+ *
+ */
+
+/**
+ * Evolution Algorithms input
  *
  */
 public class EvInput extends Input {

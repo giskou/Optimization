@@ -12,7 +12,7 @@ import methods.evolution.Citizen;
 import methods.evolution.Population;
 
 /**
- * @author giskou
+ * @author giskou ekontogi
  *
  */
 public abstract class Mutation {
@@ -24,7 +24,9 @@ public abstract class Mutation {
 		this.pr = pr;
 		this.range = range;
 	}
-	
+	/**
+	 *@return mutates (one coefficient or all)
+	 */
 	public Population mutate(Population pop) {
 		Random rand = new Random(System.currentTimeMillis());
 		Iterator<Citizen> it = pop.getItems().iterator();

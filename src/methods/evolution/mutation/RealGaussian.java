@@ -8,7 +8,7 @@ import java.util.Random;
 import libs.Range;
 
 /**
- * @author giskou
+ * @author iskoulis ekontogi
  *
  */
 public class RealGaussian extends Mutation {
@@ -17,13 +17,19 @@ public class RealGaussian extends Mutation {
 	float factor;
 	int rep;
 	
+	/**
+	 *@param: range, propability(0 for one coefficient), scaling factor
+	 */
 	public RealGaussian(Range range, float pr, float factor) {
 		super(range, pr);
 		this.factor = factor;
 		this.scale = 1;
 		this.rep = 0;
 	}
-
+	/**
+	 *@param: Gaussian parameter, dimension
+	 *@return: Gaussian mutation
+	 */
 	protected double mut(double v, int dim) {
 		Random r = new Random(System.nanoTime());
 		double dj = Math.min(v-range.min[dim], range.max[dim]-v);

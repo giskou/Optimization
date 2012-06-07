@@ -10,7 +10,7 @@ import methods.evolution.Citizen;
 import methods.evolution.Population;
 
 /**
- * @author iskoulis
+ * @author iskoulis ekontogi
  *
  */
 public abstract class Selection {
@@ -21,7 +21,9 @@ public abstract class Selection {
 	public Selection(Selector sel) {
 		this.s = sel;
 	}
-
+	/**
+	 *@param: population to be updated and evaluated
+	 */
 	public Population select(Population pop) {
 		this.pop = pop;
 		TreeSet<Citizen> items = pop.getItems();
