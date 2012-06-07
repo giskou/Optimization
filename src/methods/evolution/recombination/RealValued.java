@@ -9,7 +9,7 @@ import methods.evolution.Citizen;
 import methods.evolution.Population;
 
 /**
- * @author giskou
+ * @author iskoulis ekontogi
  *
  */
 public class RealValued implements Recombination{
@@ -17,12 +17,19 @@ public class RealValued implements Recombination{
 	Range range;
 	float delta;
 	
+	/**
+	 *@param: function range, delta(real-valued recombination parameter)
+	 */
 	public RealValued(Range range, float delta) {
 		this.range = range;
 		this.delta = delta;
 	}
 	
 	@Override
+	/**
+	 *@param: population
+	 *@return: recombined population
+	 */
 	public Population recombine(Population pop) {
 		int p1, p2;
 		Population result = new Population();

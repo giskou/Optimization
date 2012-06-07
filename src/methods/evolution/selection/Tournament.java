@@ -17,7 +17,10 @@ public class Tournament implements Selector {
 	public Tournament(int size) {
 		this.size = size;
 	}
-	
+	/**
+	 *@param: population
+	 *@return: selected citizen
+	 */
 	public Population Spin(Population pop) {
 		Population result = new Population();
 		int popSize = pop.size();

@@ -24,6 +24,9 @@ public class LinearScaling extends Selection{
 	}
 	
 	@Override
+	/**
+	 *@param: Citizen to be evaluated
+	 */
 	protected void evaluate(Citizen ct) {
 		float a = (float)(b - ct.getValue());
 		if (a < 0) a = 0;

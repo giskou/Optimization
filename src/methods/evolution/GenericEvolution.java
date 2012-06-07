@@ -14,7 +14,7 @@ import libs.functions.Function;
 import methods.Method;
 
 /**
- * @author iskoulis
+ * @author iskoulis ekontogi
  *
  */
 public class GenericEvolution extends Method{
@@ -51,7 +51,15 @@ public class GenericEvolution extends Method{
 		return res;
 	}
 	
+<<<<<<< HEAD
 	public static Population initialize(Function f, Range r, int size, int dim) {
+=======
+	/**
+	 * Initialize Population
+	 *
+	 */
+	private static Population initialize(Function f, Range r, int size, int dim) {
+>>>>>>> f0faf9fa58e796857dfa178150c60093ef3687a7
 		Random rand = new Random(System.currentTimeMillis());
 		Population pop = new Population();
 		for (int i = 0; i < size; i++) {
@@ -66,6 +74,10 @@ public class GenericEvolution extends Method{
 		return pop;
 	}
 	
+	/**
+	 * Evaluates Population
+	 *
+	 */
 	private static Population evaluate(Population p, Input in) {
 		Population pop = new Population();
 		Iterator<Citizen> it = p.getItems().iterator();

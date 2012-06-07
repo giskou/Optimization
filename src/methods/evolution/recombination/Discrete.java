@@ -8,11 +8,14 @@ import methods.evolution.Citizen;
 import methods.evolution.Population;
 
 /**
- * @author giskou
+ * @author iskoulis ekontogi
  *
  */
 public class Discrete implements Recombination {
-
+	/**
+	 *@param: population
+	 *@return: recombined population
+	 */
 	public Population recombine(Population pop) {
 		Population result = new Population();
 		Object[] parents = pop.getItems().toArray();

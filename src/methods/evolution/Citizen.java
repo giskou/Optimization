@@ -8,7 +8,7 @@ import java.util.Comparator;
 import libs.Point;
 
 /**
- * @author giskou
+ * @author giskou ekontogi
  *
  */
 public class Citizen {
