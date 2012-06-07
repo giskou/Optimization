@@ -5,6 +5,7 @@ import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 @SuppressWarnings("serial")
 public class deGui extends JPanel {
@@ -12,6 +13,7 @@ public class deGui extends JPanel {
 	public JPanel panel_de;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton button;
 	/**
 	 * Create the panel.
 	 */
@@ -41,5 +43,9 @@ public class deGui extends JPanel {
 		textField_1.setColumns(10);
 		textField_1.setBounds(49, 68, 50, 19);
 		panel_de.add(textField_1);
+		
+		button = new JButton("Start");
+		button.setBounds(551, 112, 89, 25);
+		panel_de.add(button);
 	}
 }

@@ -1,11 +1,22 @@
 package gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
+
+import libs.Input;
+import libs.Range;
+import libs.Result;
+import libs.functions.Ackley;
+import libs.functions.Function;
+import methods.evolution.EvInput;
+import methods.evolution.GenericEvolution;
 
 @SuppressWarnings("serial")
 public class psoGui extends JPanel{
@@ -30,10 +41,6 @@ public class psoGui extends JPanel{
 		JLabel lblTest = new JLabel("PSO parameters");
 		lblTest.setBounds(33, 27, 133, 15);
 		panel_pso.add(lblTest);
-		
-		JButton btnNewButton = new JButton("Start");
-		btnNewButton.setBounds(539, 168, 117, 25);
-		panel_pso.add(btnNewButton);
 		
 		JLabel lblC = new JLabel("c1");
 		lblC.setBounds(33, 63, 37, 15);
@@ -61,7 +68,25 @@ public class psoGui extends JPanel{
 		textField_2.setColumns(10);
 		textField_2.setBounds(234, 129, 50, 19);
 		panel_pso.add(textField_2);
+		
+		JButton button = new JButton("Start");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Function f = new Ackley(20, 0.2, (2*Math.PI), 0);
+				double min[] = {-30, -30};
+				double max[] = {30, 30};
+				
+//				Range range = new Range(min, max);
+//				Result res;
+//				
+//				Input in = new EvInput(f, range, mainGui.get_Calc(), mainGui.get_Acc(), sel, rc, m, popsize);
+//				res = DIfferecinalEvolution.run(in);
+//				String output = "PSO result = " + res.getValue() + " at " + res.getRes() + " after " + res.getSteps() +"\n";
+//				mainGui.textArea.append(output);
+			}
+		});
+		button.setBounds(559, 167, 89, 25);
+		panel_pso.add(button);
 
 	}
-
 }
