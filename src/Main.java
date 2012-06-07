@@ -181,7 +181,6 @@ public class Main {
 //			res = GenericEvolution.run(in);
 //			System.out.println(i + "  " + res);
 //		}
-<<<<<<< HEAD
 		
 //---------------------------------------------------
 //---------------------------------------------------
@@ -225,8 +224,5 @@ public class Main {
 		Result res = DifferentialEvolution.run(in);
 		System.out.println(res);
 		
-		
-=======
->>>>>>> f0faf9fa58e796857dfa178150c60093ef3687a7
 	}
 }

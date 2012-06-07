@@ -51,15 +51,11 @@ public class GenericEvolution extends Method{
 		return res;
 	}
 	
-<<<<<<< HEAD
-	public static Population initialize(Function f, Range r, int size, int dim) {
-=======
 	/**
 	 * Initialize Population
 	 *
 	 */
-	private static Population initialize(Function f, Range r, int size, int dim) {
->>>>>>> f0faf9fa58e796857dfa178150c60093ef3687a7
+	public static Population initialize(Function f, Range r, int size, int dim) {
 		Random rand = new Random(System.currentTimeMillis());
 		Population pop = new Population();
 		for (int i = 0; i < size; i++) {
