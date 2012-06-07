@@ -16,6 +16,11 @@ public class Point {
 		this.p = p.clone();
 	}
 	
+	public Point(int dim) {
+		this.dim = dim;
+		p = new double[dim];
+	}
+	
 	public double norm(){
 		double sum = 0;
 		for (int i = 0; i < dim ; i ++) {
