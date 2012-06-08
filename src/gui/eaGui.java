@@ -74,7 +74,7 @@ public class eaGui extends JPanel {
 	public eaGui() {
 		setLayout(null);
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "PSO", TitledBorder.LEADING, TitledBorder.TOP, null, UIManager.getColor("InternalFrame.activeTitleForeground")));
+		panel.setBorder(new TitledBorder(null, "Evolutionary Algorithm", TitledBorder.LEADING, TitledBorder.TOP, null, UIManager.getColor("InternalFrame.activeTitleForeground")));
 		panel.setBounds(12, 0, 670, 466);
 		add(panel);
 		panel.setLayout(null);
@@ -261,7 +261,7 @@ public class eaGui extends JPanel {
 		
 		textField_1 = new JTextField();
 		textField_1.setEnabled(false);
-		textField_1.setBounds(241, 423, 50, 19);
+		textField_1.setBounds(241, 423, 70, 19);
 		textField_1.setToolTipText("convergence factor 0.9999");
 		panel.add(textField_1);
 		textField_1.setColumns(10);
@@ -273,7 +273,7 @@ public class eaGui extends JPanel {
 		textField_2 = new JTextField();
 		textField_2.setEnabled(false);
 		textField_2.setColumns(10);
-		textField_2.setBounds(241, 401, 50, 19);
+		textField_2.setBounds(241, 401, 70, 19);
 		textField_2.setToolTipText("convergence factor 0.9999");
 		panel.add(textField_2);
 		
@@ -284,7 +284,7 @@ public class eaGui extends JPanel {
 		textField_3 = new JTextField();
 		textField_3.setEnabled(false);
 		textField_3.setColumns(10);
-		textField_3.setBounds(428, 423, 50, 19);
+		textField_3.setBounds(428, 423, 70, 19);
 		panel.add(textField_3);
 		
 		JLabel label = new JLabel("Population Size");

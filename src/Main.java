@@ -199,30 +199,30 @@ public class Main {
 		
 //---------------------------------------------------
 //---------------------------------------------------
-		Function f = new Ackley(20, 0.2, (2*Math.PI), 0);
-		double min[] = {-30, -30};
-		double max[] = {30, 30};
-		
-		Range range = new Range(min, max);
-		
-		DEMutation m3_b1 = new Best1Bin((float)0.3);
-		DEMutation m5_b1 = new Best1Bin((float)0.5);
-		DEMutation m3_r1 = new Rand1Bin((float)0.3);
-		DEMutation m5_r1 = new Rand1Bin((float)0.5);
-		DEMutation m3_s1 = new Rand2BinStar((float)0.3);
-		DEMutation m5_s1 = new Rand2BinStar((float)0.5);
-		DEMutation m3_b2 = new Best2Bin((float)0.3);
-		DEMutation m5_b2 = new Best2Bin((float)0.5);
-		DEMutation m3_r2 = new Rand2Bin((float)0.3);
-		DEMutation m5_r2 = new Rand2Bin((float)0.5);
-		
-		DERecombination r3 = new DERecombination((float)0.3);
-		DERecombination r5 = new DERecombination((float)0.5);
-		
-		
-		Input in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r2, r5);
-		Result res = DifferentialEvolution.run(in);
-		System.out.println(res);
+//		Function f = new Ackley(20, 0.2, (2*Math.PI), 0);
+//		double min[] = {-30, -30};
+//		double max[] = {30, 30};
+//		
+//		Range range = new Range(min, max);
+//		
+//		DEMutation m3_b1 = new Best1Bin((float)0.3);
+//		DEMutation m5_b1 = new Best1Bin((float)0.5);
+//		DEMutation m3_r1 = new Rand1Bin((float)0.3);
+//		DEMutation m5_r1 = new Rand1Bin((float)0.5);
+//		DEMutation m3_s1 = new Rand2BinStar((float)0.3);
+//		DEMutation m5_s1 = new Rand2BinStar((float)0.5);
+//		DEMutation m3_b2 = new Best2Bin((float)0.3);
+//		DEMutation m5_b2 = new Best2Bin((float)0.5);
+//		DEMutation m3_r2 = new Rand2Bin((float)0.3);
+//		DEMutation m5_r2 = new Rand2Bin((float)0.5);
+//		
+//		DERecombination r3 = new DERecombination((float)0.3);
+//		DERecombination r5 = new DERecombination((float)0.5);
+//		
+//		
+//		Input in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r2, r5);
+//		Result res = DifferentialEvolution.run(in);
+//		System.out.println(res);
 		
 	}
 }

@@ -70,7 +70,7 @@ public class mainGui {
 		frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 819);
 		frmEvolutionaryAlgorithms.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] meth = {"Evolutionnary Algorithm", "PSO", "Differencial Evolution"};
+		String[] meth = {"Evolutionnary Algorithm", "PSO", "Differential Evolution"};
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -130,7 +130,7 @@ public class mainGui {
 					scrollPane.setBounds(29, 350, 662, 160);
 					frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 560);
 				}
-				else if(selection.compareTo("Differencial Evolution") == 0){
+				else if(selection.compareTo("Differential Evolution") == 0){
 					contentPane.remove(panel);
 					panel = new deGui();
 					panel.setBounds(12, 101, 695, 466);
