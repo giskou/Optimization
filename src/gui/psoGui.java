@@ -29,6 +29,7 @@ public class psoGui extends JPanel{
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JTextField textField_4;
 	/**
 	 * Create the panel.
 	 */
@@ -84,6 +85,16 @@ public class psoGui extends JPanel{
 		textField_3.setBounds(170, 65, 50, 19);
 		panel_pso.add(textField_3);
 		
+		JLabel lblNeigbourhoudSize = new JLabel("Neighbourhood Size");
+		lblNeigbourhoudSize.setBounds(305, 67, 147, 15);
+		panel_pso.add(lblNeigbourhoudSize);
+		
+		textField_4 = new JTextField();
+		textField_4.setToolTipText("0.729");
+		textField_4.setColumns(10);
+		textField_4.setBounds(470, 65, 50, 19);
+		panel_pso.add(textField_4);
+		
 		JButton button = new JButton("Start");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,7 +103,7 @@ public class psoGui extends JPanel{
 				double max[] = {30, 30};
 				
 				Range range = new Range(min, max);
-				Network net = new RingLatice(1);
+				Network net = new RingLatice(Integer.parseInt(textField_4.getText()));
 				Input in = new PSOInput(f, range, mainGui.get_Calc(), mainGui.get_Acc(), Integer.parseInt(textField_3.getText()) , Float.valueOf(textField_2.getText()), Float.valueOf(textField.getText()), Float.valueOf(textField_1.getText()), net);
 				Result res = PSO.run(in);
 				String output = "PSO result = " + res.getValue() + " at " + res.getRes() + " after " + res.getSteps() +"\n";
@@ -101,5 +112,7 @@ public class psoGui extends JPanel{
 		});
 		button.setBounds(559, 167, 89, 25);
 		panel_pso.add(button);
+		
+
 	}
 }
