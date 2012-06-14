@@ -80,7 +80,7 @@ public class eaGui extends JPanel {
 		panel.setLayout(null);
 
 		JLabel lblSelectors = new JLabel("Selectors");
-		lblSelectors.setBounds(30, 12, 70, 15);
+		lblSelectors.setBounds(30, 22, 70, 15);
 		panel.add(lblSelectors);
 		
 		JRadioButton rdbtnLinearRanking = new JRadioButton("Linear Ranking");

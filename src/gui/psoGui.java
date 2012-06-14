@@ -56,11 +56,13 @@ public class psoGui extends JPanel{
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(69, 102, 50, 19);
+		textField.setToolTipText("2.05");
 		panel_pso.add(textField);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(69, 129, 50, 19);
+		textField_1.setToolTipText("2.05");
 		panel_pso.add(textField_1);
 		
 		JLabel lblConstrictionCoefficient = new JLabel("Constriction Coefficient");
@@ -70,6 +72,7 @@ public class psoGui extends JPanel{
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(234, 154, 50, 19);
+		textField_2.setToolTipText("0.729");
 		panel_pso.add(textField_2);
 		
 		JLabel lblPopulationSize = new JLabel("Population Size");
