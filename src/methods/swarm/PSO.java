@@ -22,7 +22,7 @@ public class PSO extends Method{
 			for (int i = 1; i < sw.size; i++) {
 				Neighborhood n = in.net.getNeighborhood(sw, sw.particles[i], i);
 				sw.particles[i].setNBest(n.best());
-				sw.particles[i].move(in.cc, in.c1, in.c2);
+				sw.particles[i].move(in.cc, in.c1, in.c2, in);
 				double value = sw.particles[i].update(in.func); steps++;
 				if (value < best.value) {
 					best = sw.particles[i];
