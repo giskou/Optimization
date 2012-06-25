@@ -35,12 +35,16 @@ public class Particle extends Point{
 		this.nBest = neighborBest;
 	}
 	
-	public void move(float cc, float c1, float c2) {
+	public void move(float cc, float c1, float c2, PSOInput in) {
 		for (int i = 0; i < super.dim; i++) {
 			double r1 = Math.random();
 			double r2 = Math.random();
 			v[i] = cc*(v[i] + c1*r1*(ownBest[i] - p[i]) + c2*r2*(nBest[i] - p[i]));
-			p[i] += v[i];
+			if (Math.abs(p[i] - v[i]) > (in.range.max[i] - in.range.min[i])/3.0) {
+				p[i] += (in.range.max[i] - in.range.min[i])/3.0;
+			} else {
+				p[i] += v[i];
+			}
 		}
 	}
 	

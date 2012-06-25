@@ -1,17 +1,3 @@
-import libs.Input;
-import libs.Range;
-import libs.Result;
-import libs.functions.Ackley;
-import libs.functions.Function;
-import methods.evolution.differential.DEInput;
-import methods.evolution.differential.DERecombination;
-import methods.evolution.differential.DifferentialEvolution;
-import methods.evolution.differential.mutation.Best1Bin;
-import methods.evolution.differential.mutation.Best2Bin;
-import methods.evolution.differential.mutation.DEMutation;
-import methods.evolution.differential.mutation.Rand1Bin;
-import methods.evolution.differential.mutation.Rand2Bin;
-import methods.evolution.differential.mutation.Rand2BinStar;
 
 
 
@@ -191,9 +177,9 @@ public class Main {
 //		
 //		Range range = new Range(min, max);
 //		
-//		Network net = new RingLatice(1);
+//		Network net = new RingLatice(4);
 //		
-//		Input in = new PSOInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20 , (float)0.729, (float)2.05, (float)2.05, net);
+//		Input in = new PSOInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 50 , (float)0.729, (float)2.05, (float)2.05, net);
 //		Result res = PSO.run(in);
 //		System.out.println(res);
 		
@@ -202,6 +188,9 @@ public class Main {
 //		Function f = new Ackley(20, 0.2, (2*Math.PI), 0);
 //		double min[] = {-30, -30};
 //		double max[] = {30, 30};
+//		
+//		Input in;
+//		Result res;
 //		
 //		Range range = new Range(min, max);
 //		
@@ -219,10 +208,96 @@ public class Main {
 //		DERecombination r3 = new DERecombination((float)0.3);
 //		DERecombination r5 = new DERecombination((float)0.5);
 //		
-//		
-//		Input in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r2, r5);
-//		Result res = DifferentialEvolution.run(in);
-//		System.out.println(res);
-		
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m3_b1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m3_r1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m3_s1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m3_b2, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m3_r2, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_b1, r3);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r1, r3);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_s1, r3);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_b2, r3);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r2, r3);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_b1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_s1, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_b2, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+//		for (int i = 0; i < 30; i++) {
+//			in = new DEInput(f, range, Math.pow(10, 6), Math.pow(10, -2), 20, m5_r2, r5);
+//			res = DifferentialEvolution.run(in);
+//			System.out.println(res);
+//		}
+//		System.out.println("--------------");
+
 	}
 }
