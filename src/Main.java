@@ -1,3 +1,13 @@
+import libs.Input;
+import libs.Range;
+import libs.Result;
+import libs.functions.Function;
+import libs.functions.MagicSquare;
+import methods.swarm.aco.ACO;
+import methods.swarm.aco.ACOInput;
+import methods.swarm.aco.ACOMMInput;
+import methods.swarm.aco.ACOMinMax;
+
 
 
 
@@ -299,5 +309,40 @@ public class Main {
 //		}
 //		System.out.println("--------------");
 
+//------------------------------------------------
+//------------------------------------------------
+		
+//		Function f = new Michalewicz(10);
+//		double minimizer[] = {2.20319,1.57049};
+//		double min[] = {0, 0};
+//		double max[] = {Math.PI, Math.PI};
+//		
+//		Range range = new Range(min, max);
+//		for (int i = 0; i < 30; i++) {
+////	                                                                                HMCR         PAR          w           cf
+//			Input in = new HSInput(f, range, Math.pow(10, 5), -1.80, 20, 20, (float) 0.9, (float) 0.7, (float) 1, (float) 0.8);
+//			Result res = HarmonySearch.run(in);
+//			System.out.println(res.getValue() + " "+ res.getSteps());
+//		}
+		
+//------------------------------------------------
+//------------------------------------------------
+		
+		Function f = new MagicSquare();
+		double[] domain = {9,8,3,4,5,2,7,6,1};
+		
+		
+		Range range = new Range(domain, new double[1]);
+		
+//		Input in = new ACOInput(f, range, Math.pow(10, 6), 0, 40, (float)0.99999, (float)2);
+//		Input in = new ACOInput(f, range, Math.pow(10, 5), 0, 40, (float)0.99999, (float)2, (float)0.2, 0);
+//                             (func,range, double steps,  prec,colSize,      p,       dt,        a,    b,     phMin,      phMax,  AS) {
+		Input in = new ACOMMInput(f, range, Math.pow(10, 5), 0,   20, (float)0.5, (float)1, (float)1, 0, (float)0, (float)10, true);
+		
+		for (int i = 0; i < 30; i++) {
+			Result res = ACOMinMax.run(in);
+			System.out.println(res);
+		}
+		
 	}
 }

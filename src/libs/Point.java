@@ -9,11 +9,17 @@ package libs;
  */
 public class Point {
 	public double p[];
+	public int ip[];
 	public int dim;
 	
 	public Point(double p[]) {
 		this.dim = p.length;
 		this.p = p.clone();
+	}
+	
+	public Point(int p[]) {
+		this.dim = p.length;
+		this.ip = p.clone();
 	}
 	
 	public Point(int dim) {
@@ -72,15 +78,28 @@ public class Point {
 	
 	@Override
 	public String toString() {
-		String s = "[";
-		for (int i = 0; i < this.dim; i++){
-			s += (float)p[i];
-			if (i == this.dim - 1) {
-				s += "]";
-			} else {
-				s += ",";
+		if (p != null) {
+			String s = "[";
+			for (int i = 0; i < this.dim; i++){
+				s += (float)p[i];
+				if (i == this.dim - 1) {
+					s += "]";
+				} else {
+					s += ",";
+				}
 			}
+			return s;
+		} else {
+			String s = "[";
+			for (int i = 0; i < this.dim; i++){
+				s += (int)ip[i];
+				if (i == this.dim - 1) {
+					s += "]";
+				} else {
+					s += ",";
+				}
+			}
+			return s;
 		}
-		return s;
 	}
 }
