@@ -70,7 +70,7 @@ public class mainGui {
 		frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 819);
 		frmEvolutionaryAlgorithms.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] meth = {"Evolutionnary Algorithm", "PSO", "Differential Evolution", "Harmony Search"};
+		String[] meth = {"Evolutionnary Algorithm", "PSO", "Differential Evolution", "Harmony Search", "ACO Min Max"};
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -145,6 +145,17 @@ public class mainGui {
 				else if(selection.compareTo("Harmony Search") == 0){
 					contentPane.remove(panel);
 					panel = new hsGui();
+					panel.setBounds(12, 101, 695, 466);
+					contentPane.add(panel);
+					panel.repaint();
+					panel.setLayout(null);
+					lblOutput.setBounds(29, 330, 70, 15);
+					scrollPane.setBounds(29, 350, 662, 160);
+					frmEvolutionaryAlgorithms.setBounds(100, 100, 755, 560);
+				}
+				else if(selection.compareTo("ACO Min Max") == 0){
+					contentPane.remove(panel);
+					panel = new ACOgui();
 					panel.setBounds(12, 101, 695, 466);
 					contentPane.add(panel);
 					panel.repaint();

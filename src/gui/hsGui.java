@@ -1,13 +1,22 @@
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import libs.Input;
+import libs.Range;
+import libs.Result;
+import libs.functions.Function;
+import libs.functions.Michalewicz;
+import methods.evolution.harmony.HSInput;
+import methods.evolution.harmony.HarmonySearch;
 
 @SuppressWarnings("serial")
 public class hsGui extends JPanel {
@@ -69,6 +78,18 @@ public class hsGui extends JPanel {
 		JButton button = new JButton("Start");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Function f = new Michalewicz(10);
+//				double minimizer[] = {2.20319,1.57049};
+				double min[] = {0, 0};
+				double max[] = {Math.PI, Math.PI};
+				
+				Range range = new Range(min, max);
+//			                                                                                HMCR         PAR          w           cf
+					Input in = new HSInput(f, range, Math.pow(10, 5), -1.80, 20, Integer.valueOf(textField.getText()), Float.valueOf(textField_1.getText()), Float.valueOf(textField_2.getText()), Float.valueOf(textField_3.getText()), (float) 0.8);
+					Result res = HarmonySearch.run(in);
+					String output = "HS result = " + res.getValue() + " at " + res.getRes() + " after " + res.getSteps() +"\n";
+					mainGui.textArea.append(output);
+				
 			}
 		});
 		button.setBounds(558, 168, 89, 25);
